@@ -20,7 +20,6 @@ export const Input = memo((props: InputProps) => {
     onChange,
     type = "text",
     placeholder,
-    autofocus,
     ...otherProps
   } = props;
 
@@ -44,3 +43,5 @@ export const Input = memo((props: InputProps) => {
     </div>
   );
 });
+
+Input.displayName = "Input";

@@ -26,10 +26,12 @@ export const ProductItem: React.FC<ProductItemProps> = React.memo(
     const handleAddToFavorites = useCallback(
       (e: React.MouseEvent) => {
         e.stopPropagation();
-        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-        isInFavorites
-          ? removeItemFromFavorites(id)
-          : addItemToFavorites(product);
+
+        if (isInFavorites) {
+          removeItemFromFavorites(id);
+        } else {
+          addItemToFavorites(product);
+        }
       },
       [addItemToFavorites, id, isInFavorites, product, removeItemFromFavorites]
     );
